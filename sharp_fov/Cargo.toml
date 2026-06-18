@@ -1,0 +1,19 @@
+[package]
+name = "sharp_fov"
+version = "1.0.0"
+edition = "2021"
+description = "Interactive sharp-FOV / blur-boundary measurement overlay for OpenVR (Pimax Dream Air)."
+
+[dependencies]
+# none. openvr_api.dll + msvcrt _getch, both loaded dynamically.
+
+[[bin]]
+name = "sharp_fov"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

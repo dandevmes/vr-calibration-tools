@@ -1,0 +1,19 @@
+[package]
+name = "ipd_align"
+version = "1.0.0"
+edition = "2021"
+description = "Dichoptic nonius IPD/centering alignment overlay for OpenVR (Pimax Dream Air). No eye tracking."
+
+[dependencies]
+# none. talks to openvr_api.dll directly.
+
+[[bin]]
+name = "ipd_align"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
